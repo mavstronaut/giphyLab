@@ -48,6 +48,59 @@
 var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=YOUR_API_KEY&limit=5");
 xhr.done(function(data) { console.log("success got data", data); });
 
+
+// added as a template for ajax commands.S
+// Performing GET requests to the OMDB API and logging the responses to the console
+$.ajax({
+      url: "https://www.omdbapi.com/?t=romancing+the+stone&y=&plot=short&apikey=trilogy",
+      method: "GET"
+    }).then(function(response) {
+      console.log(response);
+    });
+
+    $.ajax({
+      url: "https://www.omdbapi.com/?t=the+revenant&y=&plot=short&apikey=trilogy",
+      method: "GET"
+    }).then(function(response) {
+      console.log(response);
+    });
+
+    $.ajax({
+      url: "https://www.omdbapi.com/?t=god+father&y=&plot=short&apikey=trilogy",
+      method: "GET"
+    }).then(function(response) {
+      console.log(response);
+    });
+
+    $.ajax({
+      url: "https://www.omdbapi.com/?t=space+jam&y=&plot=short&apikey=trilogy",
+      method: "GET"
+    }).then(function(response) {
+      console.log(response);
+    });
+
+    $.ajax({
+      url: "https://www.omdbapi.com/?t=boiler+room&y=&plot=short&apikey=trilogy",
+      method: "GET"
+    }).then(function(response) {
+      console.log(response);
+    });
+
+    $.ajax({
+      url: "https://www.omdbapi.com/?t=inception&y=&plot=short&apikey=trilogy",
+      method: "GET"
+    }).then(function(response) {
+      console.log(response);
+    });
+
+    $.ajax({
+      url: "https://www.omdbapi.com/?t=the+dark+night&y=&plot=short&apikey=trilogy",
+      method: "GET"
+    }).then(function(response) {
+      console.log(response);
+    });
+// -----------------------------------------------------
+
 //trending
 
 // filter
