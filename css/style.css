@@ -1,15 +1,37 @@
+/* HTML tags */
+body {
+
+}
+
+img {
+
+}
 /* classes */
 .f-col {
-
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: flex-start;
+    width: 100%;
 }
 
 .f-row {
-
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    align-content: flex-start;
+    width: 100%;
+    min-width: 260px;
 }
 
 .f-item {
-
+    order: 0;
+    width: 18%;
+    margin: 1.5px;
+    padding: 1px;
 }
+
 /* id's */
 #header {
 
@@ -52,5 +74,5 @@
 }
 
 #copy {
-    
+
 }
