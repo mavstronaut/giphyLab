@@ -21,6 +21,17 @@
         <div class="f-item" id="theme"></div>
         <div class="f-item" id="nav"></div>
     </div>
+    
+    <div class="f-row" id="filter">
+        <div class="f-item" id="input"></div>
+    </div>
+
+    <div class="f-row" id="sort">
+        <div class="f-item" id="option"></div>
+        <div class="f-item" id="option"></div>
+        <div class="f-item" id="option"></div>
+    </div>
+    
     <div class="f-row" id="query">
         <div class="f-item" id="result"></div>
     </div>
@@ -30,8 +41,6 @@
         <div class="f-item" id="copy"></div>
     </div>
 
-
-
 </div>
 
 <script>
@@ -40,6 +49,10 @@ var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=YOUR
 xhr.done(function(data) { console.log("success got data", data); });
 
 //trending
+
+// filter
+
+// sort, change flexbox css options using dom
 
 </script>
 
