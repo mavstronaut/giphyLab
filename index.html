@@ -17,21 +17,33 @@
 
 <div class="f-col" id="main">
     <div class="f-row" id="header">
-        <div class="f-item" id="search"></div>
+        <div class="f-item" id="search">
+            <input name="h-search" placeholder="Search">
+        </div>
         <div class="f-item" id="theme"></div>
         <div class="f-item" id="nav"></div>
     </div>
     
     <div class="f-row" id="filter">
-        <div class="f-item" id="input"></div>
+        <div class="f-item" id="input">
+            <input name="h-search" placeholder="Search">
+        </div>
     </div>
 
     <div class="f-row" id="sort">
-        <div class="f-item" id="option"></div>
-        <div class="f-item" id="option"></div>
-        <div class="f-item" id="option"></div>
+        <div class="f-item" id="option">Filter Stickers</div>
+        <div class="f-item" id="option">Reactions Only</div>
+        <div class="f-item" id="option">
+            <button><i class="fas fa-sort"></i> Reverse sort</button>
+        </div>
     </div>
     
+    <!-- <div class="f-row" id="sort">
+            <div class="f-item" id="tags"></div>
+            <div class="f-item" id="tags"></div>
+            <div class="f-item" id="tags"></div>
+    </div> -->
+
     <div class="f-row" id="query">
         <div class="f-item" id="result"></div>
     </div>
@@ -49,7 +61,7 @@ var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=YOUR
 xhr.done(function(data) { console.log("success got data", data); });
 
 
-// added as a template for ajax commands.S
+// added as a template for ajax commands
 // Performing GET requests to the OMDB API and logging the responses to the console
 $.ajax({
       url: "https://www.omdbapi.com/?t=romancing+the+stone&y=&plot=short&apikey=trilogy",
@@ -105,7 +117,6 @@ $.ajax({
 
 // filter
 
-// sort, change flexbox css options using dom
 
 </script>
 
