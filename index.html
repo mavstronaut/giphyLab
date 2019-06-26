@@ -3,7 +3,7 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible'>
-    <title>Game of Words</title>
+    <title>GiphyLab</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='./css/style.css'>
     <script src='./js/main.js'></script>
@@ -25,8 +25,8 @@
     </div>
     
     <div class="f-row" id="filter">
-        <div class="f-item" id="input">
-            <input name="h-search" placeholder="Search">
+        <div class="f-item" id="u-enter">
+            <input name="h-search" placeholder="input-filter">
         </div>
     </div>
 
@@ -44,6 +44,8 @@
             <div class="f-item" id="tags"></div>
     </div> -->
 
+    <!-- this div will display the results from a query by appending
+         f-item divs with the image inside -->
     <div class="f-row" id="query">
         <div class="f-item" id="result"></div>
     </div>
@@ -57,60 +59,44 @@
 
 <script>
 //javascript, jQuery
-var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=YOUR_API_KEY&limit=5");
+var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=4CdzSPWGdeQOcRZXPwClbWbLKOe7QPmn&limit=5");
 xhr.done(function(data) { console.log("success got data", data); });
 
 
 // added as a template for ajax commands
-// Performing GET requests to the OMDB API and logging the responses to the console
+var APIKey = "4CdzSPWGdeQOcRZXPwClbWbLKOe7QPmn";
+
+// on click function to bring up results
+// $('#getData').click(function () {
+//       var city = $("#city").val();
+//       var country = $("#country").val();
+
+//       getWeather(city, country);
+//     });
+
+
+
+// function getWeather(city, country) {
+// var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "," + country + "&appid=" + APIKey;
+
+// We then created an AJAX call
+
 $.ajax({
-      url: "https://www.omdbapi.com/?t=romancing+the+stone&y=&plot=short&apikey=trilogy",
-      method: "GET"
-    }).then(function(response) {
-      console.log(response);
-    });
+url: xhr,
+method: "GET"
+}).then(function (response) {
+    // Create CODE HERE to Log the queryURL
+    console.log(queryURL);
+    // Create CODE HERE to log the resulting object
+    console.log(response);
+    // Create CODE HERE to transfer content to HTML
+    $(".city").html("city: " + response.name);
+    $(".wind").html("wind " + response.wind.speed);
+    $(".humidity").html("humidity " + response.main.humidity);
+    $(".temp").html((response.main.temp - 273.15) * 1.80 + 32);
+});
 
-    $.ajax({
-      url: "https://www.omdbapi.com/?t=the+revenant&y=&plot=short&apikey=trilogy",
-      method: "GET"
-    }).then(function(response) {
-      console.log(response);
-    });
 
-    $.ajax({
-      url: "https://www.omdbapi.com/?t=god+father&y=&plot=short&apikey=trilogy",
-      method: "GET"
-    }).then(function(response) {
-      console.log(response);
-    });
-
-    $.ajax({
-      url: "https://www.omdbapi.com/?t=space+jam&y=&plot=short&apikey=trilogy",
-      method: "GET"
-    }).then(function(response) {
-      console.log(response);
-    });
-
-    $.ajax({
-      url: "https://www.omdbapi.com/?t=boiler+room&y=&plot=short&apikey=trilogy",
-      method: "GET"
-    }).then(function(response) {
-      console.log(response);
-    });
-
-    $.ajax({
-      url: "https://www.omdbapi.com/?t=inception&y=&plot=short&apikey=trilogy",
-      method: "GET"
-    }).then(function(response) {
-      console.log(response);
-    });
-
-    $.ajax({
-      url: "https://www.omdbapi.com/?t=the+dark+night&y=&plot=short&apikey=trilogy",
-      method: "GET"
-    }).then(function(response) {
-      console.log(response);
-    });
 // -----------------------------------------------------
 
 //trending
