@@ -7,7 +7,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='./css/style.css'>
     <script src='./js/main.js'></script>
-    <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/0a4035d3a2.js"></script>
 
@@ -73,7 +73,9 @@ $('#find').click(function () {
       getSearch(entry);
     });
 
-
+    $(document).click(function () {
+        // activate or play the gif when clicked
+    });
 
 // function getWeather(city, country) {
 // var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "," + country + "&appid=" + APIKey;
@@ -107,6 +109,7 @@ function getSearch(entry) {
 //     // Create CODE HERE to transfer content to HTML
 //     $("<result>").html(response.embed_url);
 // });
+
 
 
 // -----------------------------------------------------
