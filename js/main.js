@@ -36,34 +36,39 @@ function showQueryInfo() {
     var query = $(this).attr("data-name");
     var giphyURL =  "https://api.giphy.com/v1/gifs/search?q=" + query + "&apikey=" + APIKey;
     
+    $.ajax({
+        url: giphyURL,
+        method: "GET"
+    }).then(function(response) {
+        console.log(response);
+        var results = response.data;
+
+        for (var i=0; i < results.length; i++){
+            var resultsDiv = $("<div>");
+            var rating = results[i].rating;
+            var p = $("<p>").text("Rating: " + rating);
+            var queryImg = $("<img>");
+            
+            queryImg.attr("src", results[i].images.fixed_height_still.url);
+            queryImg.attr("data-still", results[i].images.fixed_height_still.url);
+            queryImg.attr("data-animate", results[i].images.fixed_height.url);
+            queryImg.addClass("gif");
+
+            resultsDiv.append(queryImg);
+            resultsDiv.append(p);
+
+            $("#result").prepend(resultsDiv);
+        }
+    });
+
+    $(document).on("click", ".gif", function() {
+        if($(this).attr("data-animate") === $(this).attr("src")) {
+            $(this).attr("src", $(this).attr("data-still"));
+        } else {
+            $(this).attr("src", $(this).attr("data-animate"));
+        }
+    });
 }
-
-$.ajax({
-    url: giphyURL,
-    method: "GET"
-}).then(function(response) {
-    console.log(response);
-    var results = response.data;
-
-    for (var i=0; i < results.length; i++){
-        var resultsDiv = $("<div>");
-        var rating = results[i].rating;
-        var p = $("<p>").text("Rating: " + rating);
-        var queryImg = $("<img>");
-        
-        queryImg.attr("src", results[i].images.fixed_height_still.url);
-        queryImg.attr("data-still", results[i].images.fixed_height_still.url);
-        queryImg.attr("data-animate", results[i].images.fixed_height.url);
-        queryImg.addClass("gif");
-
-        resultsDiv.append(queryImg);
-        resultsDiv.append(p);
-
-        $("#gifs-appear-here").prepend(resultsDiv);
-    }
-});
-
-
 
 // on click function to bring up results
 // $('#find').click(function () {
@@ -80,20 +85,20 @@ $.ajax({
     // var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "," + country + "&appid=" + APIKey;
 
     // Method 1 https://stackoverflow.com/questions/42193187/how-do-i-display-all-giphy-api-search-result-images/46804284
-    function getSearch(entry) {
-        $.ajax({
-        url: xhr,
-        method: "GET",
-        }).then(function (response) {
+    // function getSearch(entry) {
+    //     $.ajax({
+    //     url: xhr,
+    //     method: "GET",
+    //     }).then(function (response) {
 
-            for (var i = 0; i < response.data.length; i++) {
-            var giphyURL = response.data[i].images.fixed_height.url;
-            var newImg = $("<img>");
-            newImg.attr("src", giphyURL);
-            $("<#result>").append(newImg);
-        }
-        });
-    };
+    //         for (var i = 0; i < response.data.length; i++) {
+    //         var giphyURL = response.data[i].images.fixed_height.url;
+    //         var newImg = $("<img>");
+    //         newImg.attr("src", giphyURL);
+    //         $("<#result>").append(newImg);
+    //     }
+    //     });
+    // };
 
     // Method 2 (following along with class o_0)
     // $.ajax({
