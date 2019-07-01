@@ -32,6 +32,13 @@ $("#find").on("click", function(event) {
 
 renderButtons();
 
+function showQueryInfo() {
+    var query = $(this).attr("data-name");
+    var giphyURL =  "https://api.giphy.com/v1/gifs/search?q=" + query + "&apikey=" + APIKey;
+    
+}
+
+
 
 
 // on click function to bring up results
