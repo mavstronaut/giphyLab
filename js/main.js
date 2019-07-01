@@ -38,6 +38,30 @@ function showQueryInfo() {
     
 }
 
+$.ajax({
+    url: giphyURL,
+    method: "GET"
+}).then(function(response) {
+    console.log(response);
+    var results = response.data;
+
+    for (var i=0; i < results.length; i++){
+        var resultsDiv = $("<div>");
+        var rating = results[i].rating;
+        var p = $("<p>").text("Rating: " + rating);
+        var queryImg = $("<img>");
+        
+        queryImg.attr("src", results[i].images.fixed_height_still.url);
+        queryImg.attr("data-still", results[i].images.fixed_height_still.url);
+        queryImg.attr("data-animate", results[i].images.fixed_height.url);
+        queryImg.addClass("gif");
+
+        resultsDiv.append(queryImg);
+        resultsDiv.append(p);
+
+        $("#gifs-appear-here").prepend(resultsDiv);
+    }
+});
 
 
 
