@@ -34,7 +34,6 @@ img {
     order: 0;
     width: 18%;
     height: auto;
-    margin: 1.5px;
     padding: 1px;
     background-color: rgb(30, 51, 88);
     color: rgb(224, 223, 223);
@@ -44,7 +43,6 @@ img {
     order: 0;
     width: 99%;
     height: auto;
-    margin: 1.5px;
     padding: 1px;
     background-color: rgb(30, 51, 88);
     color: rgb(230, 230, 230);
@@ -54,14 +52,20 @@ img {
 .S-item {
     order: 0;
     width: 99%;
-    margin: 1.5px;
     padding: 1px;
     background-color: rgb(30, 51, 88);
     color: rgb(233, 233, 233);
     text-align: center;
-
 }
 
+.p-item {
+    order: 0;
+    width: 99%;
+    padding: 1px;
+    background-color: rgb(30, 51, 88);
+    color: rgb(233, 233, 233);
+    text-align: center;
+}
 .h-item {
     order: 0;
     width: 99%;
@@ -75,7 +79,6 @@ img {
 /* id's */
 #search-form {
     width: 99%;
-    margin: 1.5px;
     padding: 1px;
     background-color: rgb(30, 51, 88);
     color: rgb(167, 167, 167);
