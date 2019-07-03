@@ -1,6 +1,7 @@
 /* HTML tags */
 body {
     font-family: 'B612 Mono', monospace;
+    background-color: darkslategray;
 }
 
 input {
@@ -21,6 +22,10 @@ img {
     height: auto;
 }
 /* classes */
+.gif {
+    max-width: 25%;
+    height: auto;
+}
 .f-col {
     flex-direction: column;
     justify-content: flex-start;
@@ -41,7 +46,7 @@ img {
 
 .f-item {
     order: 0;
-    width: 18%;
+    width: 25%;
     height: auto;
     padding: 1px;
     background-color: rgb(30, 51, 88);
@@ -50,35 +55,35 @@ img {
 
 .foo-item {
     order: 0;
-    width: 99%;
+    width: 100%;
     height: auto;
     padding: 1px;
-    background-color: rgb(30, 51, 88);
+    background-color: rgb(82, 114, 173);
     color: rgb(230, 230, 230);
     text-align: center;
 }
 
 .S-item {
     order: 0;
-    width: 99%;
+    width: 100%;
     padding: 1px;
-    background-color: rgb(30, 51, 88);
+    background-color: rgb(82, 114, 173);
     color: rgb(233, 233, 233);
     text-align: center;
 }
 
 .p-item {
     order: 0;
-    width: 99%;
+    width: 100%;
     padding: 1px;
-    background-color: rgb(30, 51, 88);
+    background-color: rgb(75, 103, 156);
     color: rgb(233, 233, 233);
     text-align: center;
 }
 .h-item {
     order: 0;
-    width: 99%;
-    margin: 1.5px;
+    width: 100%;
+    margin-bottom: 1px;
     padding: 1px;
     text-align: center; 
     background-color: rgb(82, 114, 173);
@@ -87,7 +92,7 @@ img {
 
 /* id's */
 #search-form {
-    width: 99%;
+    width: 100%;
     padding: 1px;
     background-color: rgb(30, 51, 88);
     color: rgb(167, 167, 167);
@@ -103,6 +108,20 @@ img {
     font-size: 24px;
 }
 
+#footer {
+    padding-top: 25px;
+    padding-bottom: 42px;
+    padding: 1px;
+    background-color: rgb(82, 114, 173);
+}
+
+#header {
+    padding-bottom: 25px;
+    padding-top: 42px;
+    padding: 1px;
+    background-color: rgb(82, 114, 173);
+}
+
 /* #option {
 
 }
@@ -112,10 +131,6 @@ img {
 }
 
 #result {
-
-}
-
-#footer {
 
 }
 

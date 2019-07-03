@@ -49,7 +49,7 @@ function showQueryInfo() {
         for (var i=0; i < results.length; i++){
             var resultsDiv = $("<div>");
             var rating = results[i].rating;
-            var p = $("<p>").text("Rating: " + rating);
+            var p = $("<p>").text("Rated: " + rating);
             var queryImg = $("<img>");
             
             queryImg.attr("src", results[i].images.fixed_height_still.url);
