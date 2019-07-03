@@ -1,10 +1,19 @@
 /* HTML tags */
 body {
-font-family: 'B612 Mono', monospace;
+    font-family: 'B612 Mono', monospace;
 }
 
 input {
-font-family: 'B612 Mono', monospace;
+    font-family: 'B612 Mono', monospace;
+    background-color: cornflowerblue;
+    color: azure;
+    border-radius: 25px;
+}
+
+button {
+    border-radius: 25px;
+    background-color: cornflowerblue;
+    color: azure;
 }
 
 img {
@@ -94,7 +103,7 @@ img {
     font-size: 24px;
 }
 
-#option {
+/* #option {
 
 }
 
@@ -116,4 +125,4 @@ img {
 
 #copy {
 
-}
+} */
