@@ -1,14 +1,11 @@
-var APIKey = "4CdzSPWGdeQOcRZXPwClbWbLKOe7QPmn";
+// javascript, jQuery
+// var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=rick+and+morty&api_key=4CdzSPWGdeQOcRZXPwClbWbLKOe7QPmn&limit=5");
+// xhr.done(function(data) { console.log("success got data", data); });
 
 var prevSearch = ["Rick & Morty", "Advice Animals"];
-// javascript, jQuery
-// var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=4CdzSPWGdeQOcRZXPwClbWbLKOe7QPmn&limit=5");
-// xhr.done(function(data) { console.log("success got data", data); });
 
 function renderButtons() {
     $("#buttons-view").empty();
-
-   
 
     for (var i=0; i < prevSearch.length; i++) {
         var a=$("<button>");
@@ -39,7 +36,8 @@ renderButtons();
 
 function showQueryInfo() {
     var query = $(this).attr("data-name");
-    var giphyURL =  "https://api.giphy.com/v1/gifs/search?q=" + query + "&apikey=" + APIKey;
+    var APIKey = "4CdzSPWGdeQOcRZXPwClbWbLKOe7QPmn";
+    var giphyURL =  "https://api.giphy.com/v1/gifs/search?q=" + query + "&apikey=" + APIKey + "&limit=10";
     
     $.ajax({
         url: giphyURL,
