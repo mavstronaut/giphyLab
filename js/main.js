@@ -1,7 +1,7 @@
 var APIKey = "4CdzSPWGdeQOcRZXPwClbWbLKOe7QPmn";
 
 var prevSearch = ["Rick & Morty", "Advice Animals"];
-//javascript, jQuery
+// javascript, jQuery
 // var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=4CdzSPWGdeQOcRZXPwClbWbLKOe7QPmn&limit=5");
 // xhr.done(function(data) { console.log("success got data", data); });
 
