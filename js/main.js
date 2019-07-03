@@ -8,6 +8,8 @@ var prevSearch = ["Rick & Morty", "Advice Animals"];
 function renderButtons() {
     $("#buttons-view").empty();
 
+   
+
     for (var i=0; i < prevSearch.length; i++) {
         var a=$("<button>");
             // adding query class to our button
@@ -17,14 +19,17 @@ function renderButtons() {
 
         $("#buttons-view").append(a);
     }
+    
 };
 
 $("#find").on("click", function(event) {
   event.preventDefault();
   var query = $("#goSearch").val().trim();
 
+  if (query.length >= 1) {
   prevSearch.push(query);
   console.log(prevSearch);
+};
 
   renderButtons();
   $("#goSearch").val("");

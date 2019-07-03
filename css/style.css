@@ -5,8 +5,8 @@ body {
 
 input {
     font-family: 'B612 Mono', monospace;
-    background-color: cornflowerblue;
-    color: azure;
+    background-color: azure;
+    color: cornflowerblue;
     border-radius: 25px;
 }
 
