@@ -10,7 +10,7 @@ function renderButtons() {
     for (var i=0; i < prevSearch.length; i++) {
         var a=$("<button>");
             // adding query class to our button
-        a.addClass("prev-search")
+        a.addClass("query")
         a.attr("data-name", prevSearch[i]);
         a.text(prevSearch[i]);
 
@@ -31,6 +31,8 @@ $("#find").on("click", function(event) {
   renderButtons();
   $("#goSearch").val("");
 });
+
+$(document).on("click", ".query", showQueryInfo);
 
 renderButtons();
 
