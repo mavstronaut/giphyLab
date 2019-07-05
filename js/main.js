@@ -65,12 +65,12 @@ function showQueryInfo() {
             $("#result").prepend(resultsDiv);
         }
     });
-
-    $(document).on("click", ".gif", function() {
-        if($(this).attr("data-animate") === $(this).attr("src")) {
-            $(this).attr("src", $(this).attr("data-still"));
-        } else {
-            $(this).attr("src", $(this).attr("data-animate"));
-        }
-    });
 };
+
+$(document).on("click", ".gif", function() {
+    if($(this).attr("data-animate") === $(this).attr("src")) {
+        $(this).attr("src", $(this).attr("data-still"));
+    } else {
+        $(this).attr("src", $(this).attr("data-animate"));
+    }
+});
