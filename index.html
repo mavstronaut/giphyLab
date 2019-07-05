@@ -3,44 +3,48 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible'>
-    <title>Game of Words</title>
+    <title>GiphyLab</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='./css/style.css'>
-    <script src='./js/main.js'></script>
-    <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/0a4035d3a2.js"></script>
-
-
 </head>
 <body>
 
 <div class="f-col" id="main">
     <div class="f-row" id="header">
-        <div class="f-item" id="search"></div>
-        <div class="f-item" id="theme"></div>
-        <div class="f-item" id="nav"></div>
+        <div class="h-item" id="theme">Gif Sentencer</div>
+        <!-- <div class="f-item" id="nav"></div> -->
     </div>
+    
+    <div class="f-row" id="filter">
+        <div class="s-item" id="search">
+            <form id="search-form">
+            <input name="h-search" id="goSearch" placeholder="  Find gifs!">
+            <input id="find" type="submit">
+        </form>
+        </div>
+    </div>
+
+    <div class="f-row" id="prev-search">
+        <div class="p-item" id="buttons-view"></div>
+    </div>
+
+    <!-- this div will display the results from a query by appending
+         f-item divs with the image inside -->
     <div class="f-row" id="query">
-        <div class="f-item" id="result"></div>
+        <div class="f-item" id="result">
+        </div>
     </div>
 
     <div class="f-row" id="footer">
-        <div class="f-item" id="social"></div>
-        <div class="f-item" id="copy"></div>
+        <div class="foo-item" id="social">
+            <a href="http://www.saymeta.com">More from the Creator <i class="far fa-paper-plane"></i></a>
+        </div>
+        <div class="foo-item" id="copy">Copyright &copy;2019 Mavrick Barona</div>
     </div>
 
-
-
 </div>
-
-<script>
-//javascript, jQuery
-var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=YOUR_API_KEY&limit=5");
-xhr.done(function(data) { console.log("success got data", data); });
-
-//trending
-
-</script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src='./js/main.js'></script>
 </body>

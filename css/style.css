@@ -1,0 +1,143 @@
+/* HTML tags */
+body {
+    font-family: 'B612 Mono', monospace;
+    background-color: darkslategray;
+}
+
+input {
+    font-family: 'B612 Mono', monospace;
+    background-color: azure;
+    color: cornflowerblue;
+    border-radius: 25px;
+}
+
+button {
+    border-radius: 25px;
+    background-color: cornflowerblue;
+    color: azure;
+}
+
+img {
+    max-width: 25%;
+    height: auto;
+}
+/* classes */
+.gif {
+    max-width: 25%;
+    height: auto;
+}
+.f-col {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: flex-start;
+    width: 100%;
+}
+
+.f-row {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    align-content: flex-start;
+    width: 100%;
+    min-width: 260px;
+}
+
+.f-item {
+    order: 0;
+    width: 25%;
+    height: auto;
+    padding: 1px;
+    background-color: rgb(30, 51, 88);
+    color: rgb(224, 223, 223);
+}
+
+.foo-item {
+    order: 0;
+    width: 100%;
+    height: auto;
+    padding: 1px;
+    background-color: rgb(82, 114, 173);
+    color: rgb(230, 230, 230);
+    text-align: center;
+}
+
+.S-item {
+    order: 0;
+    width: 100%;
+    padding: 1px;
+    background-color: rgb(82, 114, 173);
+    color: rgb(233, 233, 233);
+    text-align: center;
+}
+
+.p-item {
+    order: 0;
+    width: 100%;
+    padding: 1px;
+    background-color: rgb(75, 103, 156);
+    color: rgb(233, 233, 233);
+    text-align: center;
+}
+.h-item {
+    order: 0;
+    width: 100%;
+    margin-bottom: 1px;
+    padding: 1px;
+    text-align: center; 
+    background-color: rgb(82, 114, 173);
+    color: azure;
+}
+
+/* id's */
+#search-form {
+    width: 100%;
+    padding: 1px;
+    background-color: rgb(30, 51, 88);
+    color: rgb(167, 167, 167);
+    text-align: center;
+    display: inline-block;
+}
+
+#theme {
+    font-size: 42px;
+}
+
+#filter {
+    font-size: 24px;
+}
+
+#footer {
+    padding-top: 25px;
+    padding-bottom: 42px;
+    padding: 1px;
+    background-color: rgb(82, 114, 173);
+}
+
+#header {
+    padding-bottom: 25px;
+    padding-top: 42px;
+    padding: 1px;
+    background-color: rgb(82, 114, 173);
+}
+
+/* #option {
+
+}
+
+#query {
+
+}
+
+#result {
+
+}
+
+#social {
+
+}
+
+#copy {
+
+} */
