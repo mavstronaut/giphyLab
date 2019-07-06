@@ -17,15 +17,8 @@ button {
     color: azure;
 }
 
-img {
-    max-width: 25%;
-    height: auto;
-}
 /* classes */
-.gif {
-    max-width: 25%;
-    height: auto;
-}
+
 .f-col {
     flex-direction: column;
     justify-content: flex-start;
