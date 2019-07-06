@@ -51,6 +51,7 @@ function showQueryInfo() {
 
         for (var i=0; i < results.length; i++){
             var resultsDiv = $("<div>");
+            
             var rating = results[i].rating;
             var p = $("<p>").text("Rated: " + rating);
             var queryImg = $("<img>");
@@ -59,6 +60,8 @@ function showQueryInfo() {
             queryImg.attr("data-still", results[i].images.fixed_height_still.url);
             queryImg.attr("data-animate", results[i].images.fixed_height.url);
             queryImg.addClass("gif");
+            resultsDiv.addClass("f-item");
+
 
             resultsDiv.append(queryImg);
             resultsDiv.append(p);
@@ -84,6 +87,7 @@ function showQueryInfo() {
             queryImg.attr("data-still", results[i].images.fixed_height_still.url);
             queryImg.attr("data-animate", results[i].images.fixed_height.url);
             queryImg.addClass("gif");
+            resultsDiv.addClass("f-item");
 
             resultsDiv.append(queryImg);
             resultsDiv.append(p);
