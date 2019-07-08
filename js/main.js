@@ -42,59 +42,61 @@ function showQueryInfo() {
     var giphyURL =  "http://api.giphy.com/v1/gifs/search?q=" + query + "&apikey=" + APIKey + "&limit=10";
     var giphyURLhtps =  "https://api.giphy.com/v1/gifs/search?q=" + query + "&apikey=" + APIKey + "&limit=10";
 
-    $.ajax({
-        url: giphyURLhtps,
-        method: "GET"
-    }).then(function(response) {
-        console.log(response);
-        var results = response.data;
+    try {
+        $.ajax({
+            url: giphyURLhtps,
+            method: "GET"
+        }).then(function(response) {
+            console.log(response);
+            var results = response.data;
 
-        for (var i=0; i < results.length; i++){
-            var resultsDiv = $("<div>");
-            
-            var rating = results[i].rating;
-            var p = $("<p>").text("Rated: " + rating);
-            var queryImg = $("<img>");
-            
-            queryImg.attr("src", results[i].images.fixed_height_still.url);
-            queryImg.attr("data-still", results[i].images.fixed_height_still.url);
-            queryImg.attr("data-animate", results[i].images.fixed_height.url);
-            queryImg.addClass("gif");
-            resultsDiv.addClass("f-item");
+            for (var i=0; i < results.length; i++){
+                var resultsDiv = $("<div>");
+                var rating = results[i].rating;
+                var p = $("<p>").text("Rated: " + rating);
+                var queryDiv = $("<div>");
+                var queryImg = $("<img>");
+                
+                queryImg.attr("src", results[i].images.fixed_height_still.url);
+                queryImg.attr("data-still", results[i].images.fixed_height_still.url);
+                queryImg.attr("data-animate", results[i].images.fixed_height.url);
+                queryImg.addClass("gif");
+                queryDiv.append(queryImg);
+                queryDiv.append(p);
+                resultsDiv.append(queryDiv);
+                queryDiv.addClass("f-item");
+                resultsDiv.addClass("f-row");
+                $("#result").prepend(resultsDiv);
+            }
+        });
+    } catch {
+        $.ajax({
+            url: giphyURL,
+            method: "GET"
+        }).then(function(response) {
+            console.log(response);
+            var results = response.data;
 
-
-            resultsDiv.append(queryImg);
-            resultsDiv.append(p);
-
-            $("#result").prepend(resultsDiv);
-        }
-    });
-
-    $.ajax({
-        url: giphyURL,
-        method: "GET"
-    }).then(function(response) {
-        console.log(response);
-        var results = response.data;
-
-        for (var i=0; i < results.length; i++){
-            var resultsDiv = $("<div>");
-            var rating = results[i].rating;
-            var p = $("<p>").text("Rated: " + rating);
-            var queryImg = $("<img>");
-            
-            queryImg.attr("src", results[i].images.fixed_height_still.url);
-            queryImg.attr("data-still", results[i].images.fixed_height_still.url);
-            queryImg.attr("data-animate", results[i].images.fixed_height.url);
-            queryImg.addClass("gif");
-            resultsDiv.addClass("f-item");
-
-            resultsDiv.append(queryImg);
-            resultsDiv.append(p);
-
-            $("#result").prepend(resultsDiv);
-        }
-    });
+            for (var i=0; i < results.length; i++){
+                var resultsDiv = $("<div>");
+                var rating = results[i].rating;
+                var p = $("<p>").text("Rated: " + rating);
+                var queryDiv = $("<div>");
+                var queryImg = $("<img>");
+                
+                queryImg.attr("src", results[i].images.fixed_height_still.url);
+                queryImg.attr("data-still", results[i].images.fixed_height_still.url);
+                queryImg.attr("data-animate", results[i].images.fixed_height.url);
+                queryImg.addClass("gif");
+                queryDiv.append(queryImg);
+                queryDiv.append(p);
+                resultsDiv.append(queryDiv);
+                queryDiv.addClass("f-item");
+                resultsDiv.addClass("f-row");
+                $("#result").prepend(resultsDiv);
+            }
+        });
+    }
 };
 
 $(document).on("click", ".gif", function() {
