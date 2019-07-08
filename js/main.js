@@ -3,7 +3,7 @@
 // xhr.done(function(data) { console.log("success got data", data); });
 
 $(function() {
-var prevSearch = ["Rick and Morty", "Advice Animals", "cat", "dog", "poop"];
+var prevSearch = ["Rick and Morty", "Advice Animals", "Galaxy Brain", "cat", "dog", "poop"];
 
 function renderButtons() {
     $("#buttons-view").empty();
@@ -42,6 +42,8 @@ function showQueryInfo() {
     var giphyURL =  "http://api.giphy.com/v1/gifs/search?q=" + query + "&apikey=" + APIKey + "&limit=10";
     var giphyURLhtps =  "https://api.giphy.com/v1/gifs/search?q=" + query + "&apikey=" + APIKey + "&limit=10";
 
+    $("#result").empty();
+
     try {
         $.ajax({
             url: giphyURLhtps,
@@ -64,12 +66,15 @@ function showQueryInfo() {
                 queryDiv.append(queryImg);
                 queryDiv.append(p);
                 resultsDiv.append(queryDiv);
+                $("#result").prepend(resultsDiv);
+
+                $("#result").addClass("f-row");
                 queryDiv.addClass("f-item");
                 resultsDiv.addClass("f-row");
-                $("#result").prepend(resultsDiv);
             }
         });
-    } catch {
+    } catch(error) {
+        console.log(error);
         $.ajax({
             url: giphyURL,
             method: "GET"
@@ -91,9 +96,11 @@ function showQueryInfo() {
                 queryDiv.append(queryImg);
                 queryDiv.append(p);
                 resultsDiv.append(queryDiv);
+                $("#result").prepend(resultsDiv);
+
                 queryDiv.addClass("f-item");
                 resultsDiv.addClass("f-row");
-                $("#result").prepend(resultsDiv);
+                $("#result").addClass("f-row");
             }
         });
     }
