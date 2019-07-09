@@ -19,7 +19,7 @@ button {
 
 /* classes */
 
-#gif {
+.gif {
     max-width: 100%;
     height: auto;
 }
