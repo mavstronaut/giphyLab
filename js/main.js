@@ -68,9 +68,10 @@ function showQueryInfo() {
                 resultsDiv.append(queryDiv);
                 $("#result").prepend(resultsDiv);
 
-                $("#result").addClass("f-row");
-                queryDiv.addClass("f-item");
-                resultsDiv.addClass("f-row");
+                $("#result").addClass("q-row");
+                resultsDiv.addClass("q-row");
+                queryDiv.addClass("q-item");
+
             }
         });
     } catch(error) {
@@ -98,9 +99,11 @@ function showQueryInfo() {
                 resultsDiv.append(queryDiv);
                 $("#result").prepend(resultsDiv);
 
-                queryDiv.addClass("f-item");
-                resultsDiv.addClass("f-row");
-                $("#result").addClass("f-row");
+                queryDiv.addClass("q-item");
+                resultsDiv.addClass("q-row");
+                $("#result").addClass("q-row");
+
+
             }
         });
     }
