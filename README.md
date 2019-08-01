@@ -1,5 +1,6 @@
 # giphyLab  
 Sandbox for testing features of giphyAPI. 
+- View live at: http://www.roclineage.com/giphyLab/
 
 # Overview
 Sends and receives requests from Giphy's API. Stores previous searches and allows for the pausing and playiing of returned gifs. Also displays the rating for the gif's sensitivity.
